@@ -1,0 +1,6 @@
+framework module Pods_MOGMOG {
+  umbrella header "Pods-MOGMOG-umbrella.h"
+
+  export *
+  module * { export * }
+}
