@@ -10,6 +10,8 @@ import Foundation
 
 struct DataSets {
     
-    var 
+    var ShopName: String?
+    var ShopCategory: String?
+    var ShopPhoto: String?
     
 }

@@ -21,5 +21,15 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict/>
+	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>カメラを使います</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>アルバムを使います</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>アルバムを使います</string>
 </dict>
 </plist>

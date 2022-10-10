@@ -8,8 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		27B3CECED0811F307409A1AB /* Pods_MOGMOG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F8E9A6C6480FED7AA90936 /* Pods_MOGMOG.framework */; };
+		871149F228E1B928009F3F76 /* sendDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871149F128E1B928009F3F76 /* sendDB.swift */; };
 		871E631828CC710F00E90A2F /* SearchAndLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E631728CC710F00E90A2F /* SearchAndLoad.swift */; };
-		87788FEA28D0661D00695C52 /* MygroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87788FE928D0661D00695C52 /* MygroupViewController.swift */; };
+		8741AD4E28E93080008795D9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8741AD4D28E93080008795D9 /* UserData.swift */; };
+		8758DBF728DC5F4B00A16361 /* TenpoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758DBF528DC5F4B00A16361 /* TenpoCell.swift */; };
+		8758DBF828DC5F4B00A16361 /* TenpoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8758DBF628DC5F4B00A16361 /* TenpoCell.xib */; };
+		8761589B28E5CBF50080A005 /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8761589A28E5CBF50080A005 /* UIColor-Extension.swift */; };
+		8761D1C528EB18FE00AF8DAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8761D1C428EB18F700AF8DAE /* GoogleService-Info.plist */; };
+		8764D79E28EC59D600B6C306 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764D79D28EC59D600B6C306 /* DetailViewController.swift */; };
+		8764D7A028EE807800B6C306 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8764D79F28EE807800B6C306 /* SettingViewController.swift */; };
+		87A13DC628EED62100B8C77F /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A13DC428EED62100B8C77F /* SettingCell.swift */; };
+		87A13DC728EED62100B8C77F /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A13DC528EED62100B8C77F /* SettingCell.xib */; };
+		87A13DCB28EEDBCC00B8C77F /* MailChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A13DCA28EEDBCC00B8C77F /* MailChangeViewController.swift */; };
+		87A13DCD28EEDBE100B8C77F /* NameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A13DCC28EEDBE100B8C77F /* NameChangeViewController.swift */; };
 		87AD708028BDF160007A14DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD707F28BDF160007A14DE /* AppDelegate.swift */; };
 		87AD708228BDF160007A14DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD708128BDF160007A14DE /* SceneDelegate.swift */; };
 		87AD708428BDF160007A14DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD708328BDF160007A14DE /* ViewController.swift */; };
@@ -18,15 +29,29 @@
 		87AD708C28BDF161007A14DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87AD708A28BDF161007A14DE /* LaunchScreen.storyboard */; };
 		87AD709428BDFBF4007A14DE /* MyTenpoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD709328BDFBF4007A14DE /* MyTenpoViewController.swift */; };
 		87AD709628BDFC0D007A14DE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD709528BDFC0D007A14DE /* ProfileViewController.swift */; };
+		87AF3CE728F3F73A00B11639 /* PassChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AF3CE628F3F73A00B11639 /* PassChangeViewController.swift */; };
 		87B86E2128CA3803007234DC /* DataSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B86E2028CA3803007234DC /* DataSets.swift */; };
+		87D2C78F28E983C800BE8175 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D2C78E28E983C800BE8175 /* LoginViewController.swift */; };
+		87DC3EF528E5825300858F9B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DC3EF428E5825300858F9B /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		162F6B29F10C45D9E7C5108B /* Pods-MOGMOG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOGMOG.debug.xcconfig"; path = "Target Support Files/Pods-MOGMOG/Pods-MOGMOG.debug.xcconfig"; sourceTree = "<group>"; };
 		44955AAAE9A175B0661DAF88 /* Pods-MOGMOG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MOGMOG.release.xcconfig"; path = "Target Support Files/Pods-MOGMOG/Pods-MOGMOG.release.xcconfig"; sourceTree = "<group>"; };
 		68F8E9A6C6480FED7AA90936 /* Pods_MOGMOG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MOGMOG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		871149F128E1B928009F3F76 /* sendDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendDB.swift; sourceTree = "<group>"; };
 		871E631728CC710F00E90A2F /* SearchAndLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAndLoad.swift; sourceTree = "<group>"; };
-		87788FE928D0661D00695C52 /* MygroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MygroupViewController.swift; sourceTree = "<group>"; };
+		8741AD4D28E93080008795D9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		8758DBF528DC5F4B00A16361 /* TenpoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenpoCell.swift; sourceTree = "<group>"; };
+		8758DBF628DC5F4B00A16361 /* TenpoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenpoCell.xib; sourceTree = "<group>"; };
+		8761589A28E5CBF50080A005 /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		8761D1C428EB18F700AF8DAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8764D79D28EC59D600B6C306 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8764D79F28EE807800B6C306 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		87A13DC428EED62100B8C77F /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		87A13DC528EED62100B8C77F /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		87A13DCA28EEDBCC00B8C77F /* MailChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailChangeViewController.swift; sourceTree = "<group>"; };
+		87A13DCC28EEDBE100B8C77F /* NameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameChangeViewController.swift; sourceTree = "<group>"; };
 		87AD707C28BDF160007A14DE /* MOGMOG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOGMOG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AD707F28BDF160007A14DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87AD708128BDF160007A14DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +62,10 @@
 		87AD708D28BDF161007A14DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87AD709328BDFBF4007A14DE /* MyTenpoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTenpoViewController.swift; sourceTree = "<group>"; };
 		87AD709528BDFC0D007A14DE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		87AF3CE628F3F73A00B11639 /* PassChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassChangeViewController.swift; sourceTree = "<group>"; };
 		87B86E2028CA3803007234DC /* DataSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSets.swift; sourceTree = "<group>"; };
+		87D2C78E28E983C800BE8175 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		87DC3EF428E5825300858F9B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +115,7 @@
 				87B86E1C28CA3773007234DC /* View */,
 				87B86E1F28CA37AE007234DC /* Controller */,
 				87AD708D28BDF161007A14DE /* Info.plist */,
+				8761D1C428EB18F700AF8DAE /* GoogleService-Info.plist */,
 			);
 			path = MOGMOG;
 			sourceTree = "<group>";
@@ -104,8 +133,15 @@
 		87B86E1E28CA379E007234DC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				871149F128E1B928009F3F76 /* sendDB.swift */,
 				87B86E2028CA3803007234DC /* DataSets.swift */,
+				8741AD4D28E93080008795D9 /* UserData.swift */,
 				871E631728CC710F00E90A2F /* SearchAndLoad.swift */,
+				8758DBF528DC5F4B00A16361 /* TenpoCell.swift */,
+				8758DBF628DC5F4B00A16361 /* TenpoCell.xib */,
+				87A13DC428EED62100B8C77F /* SettingCell.swift */,
+				87A13DC528EED62100B8C77F /* SettingCell.xib */,
+				8761589A28E5CBF50080A005 /* UIColor-Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,8 +151,14 @@
 			children = (
 				87AD708328BDF160007A14DE /* ViewController.swift */,
 				87AD709328BDFBF4007A14DE /* MyTenpoViewController.swift */,
-				87788FE928D0661D00695C52 /* MygroupViewController.swift */,
 				87AD709528BDFC0D007A14DE /* ProfileViewController.swift */,
+				87DC3EF428E5825300858F9B /* RegisterViewController.swift */,
+				87D2C78E28E983C800BE8175 /* LoginViewController.swift */,
+				8764D79D28EC59D600B6C306 /* DetailViewController.swift */,
+				8764D79F28EE807800B6C306 /* SettingViewController.swift */,
+				87A13DCA28EEDBCC00B8C77F /* MailChangeViewController.swift */,
+				87A13DCC28EEDBE100B8C77F /* NameChangeViewController.swift */,
+				87AF3CE628F3F73A00B11639 /* PassChangeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -142,7 +184,6 @@
 				87AD707928BDF160007A14DE /* Frameworks */,
 				87AD707A28BDF160007A14DE /* Resources */,
 				930869D352A41221BC1DECD1 /* [CP] Embed Pods Frameworks */,
-				06D8AF7910EFDD4CB57A94F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,8 +232,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8761D1C528EB18FE00AF8DAE /* GoogleService-Info.plist in Resources */,
 				87AD708C28BDF161007A14DE /* LaunchScreen.storyboard in Resources */,
+				8758DBF828DC5F4B00A16361 /* TenpoCell.xib in Resources */,
 				87AD708928BDF161007A14DE /* Assets.xcassets in Resources */,
+				87A13DC728EED62100B8C77F /* SettingCell.xib in Resources */,
 				87AD708728BDF160007A14DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,23 +244,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06D8AF7910EFDD4CB57A94F4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MOGMOG/Pods-MOGMOG-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MOGMOG/Pods-MOGMOG-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MOGMOG/Pods-MOGMOG-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5F4FC4182EA483566DC0B004 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,14 +290,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87788FEA28D0661D00695C52 /* MygroupViewController.swift in Sources */,
+				8741AD4E28E93080008795D9 /* UserData.swift in Sources */,
+				8758DBF728DC5F4B00A16361 /* TenpoCell.swift in Sources */,
+				8761589B28E5CBF50080A005 /* UIColor-Extension.swift in Sources */,
+				87A13DCB28EEDBCC00B8C77F /* MailChangeViewController.swift in Sources */,
 				87AD708428BDF160007A14DE /* ViewController.swift in Sources */,
+				871149F228E1B928009F3F76 /* sendDB.swift in Sources */,
+				8764D7A028EE807800B6C306 /* SettingViewController.swift in Sources */,
+				87AF3CE728F3F73A00B11639 /* PassChangeViewController.swift in Sources */,
 				87AD709428BDFBF4007A14DE /* MyTenpoViewController.swift in Sources */,
 				87AD709628BDFC0D007A14DE /* ProfileViewController.swift in Sources */,
+				87A13DCD28EEDBE100B8C77F /* NameChangeViewController.swift in Sources */,
 				87AD708028BDF160007A14DE /* AppDelegate.swift in Sources */,
 				871E631828CC710F00E90A2F /* SearchAndLoad.swift in Sources */,
+				87A13DC628EED62100B8C77F /* SettingCell.swift in Sources */,
 				87B86E2128CA3803007234DC /* DataSets.swift in Sources */,
 				87AD708228BDF160007A14DE /* SceneDelegate.swift in Sources */,
+				87D2C78F28E983C800BE8175 /* LoginViewController.swift in Sources */,
+				87DC3EF528E5825300858F9B /* RegisterViewController.swift in Sources */,
+				8764D79E28EC59D600B6C306 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
