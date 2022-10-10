@@ -7,19 +7,16 @@ target 'MOGMOG' do
 
   # Pods for MOGMOG
 
-  pod 'Firebase/Analytics'
+  pod 'Firebase/Storage'
+  pod 'lottie-ios'
+  pod 'EMAlertController'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
-  pod 'BubbleTransition', '~> 3.2.0'
-  pod 'SDWebImage', '~> 5.0'
+  pod 'BubbleTransition'
+  pod 'SDWebImage', '~> 5.11.1'
   pod 'ViewAnimator'
   pod 'NVActivityIndicatorView'
-  pod 'GoogleMaps' 
   pod 'SwiftyJSON'
-  pod 'EMAlertController'
-  pod 'lottie-ios'
-  pod 'Firebase/Storage'
-  pod 'Firebase'
   pod 'Alamofire'
 
 end
