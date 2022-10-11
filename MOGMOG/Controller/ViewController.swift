@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
-import WebKit
 
 
 
@@ -23,7 +22,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
     var userName = String()
     var db = Firestore.firestore()
     var userID = String()
-    var webView: WKWebView!
     var detail_urlString: String?
     
     
@@ -43,7 +41,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
         
     }
     
-    // サーチボタンを押したときに呼び出されるメソッド
+    // エンターを押したときに呼び出されるメソッド
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         if tenpoSearchBar.text == "" {
@@ -57,7 +55,6 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
             let searchModel = SearchAndLoad(urlString: urlHotpepper_API)
             searchModel.doneCatchDataProtocol = self
             searchModel.search()
-
             
             view.endEditing(true)
             
@@ -73,9 +70,11 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
         self.view.endEditing(true)
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tenpoArray.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -90,12 +89,14 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
         
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let alertController = UIAlertController(title: "確認", message: "選択してください", preferredStyle: .actionSheet)
         
         let addMyTenpoAction = UIAlertAction(title: "My店舗に追加", style: .default) {(action) in
             
+            // ログインしているかどうかを判別
             if Auth.auth().currentUser?.uid != nil {
                 // ログインしていた場合の処理
                 // データベースに店舗の情報を送る
@@ -113,7 +114,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
                     controller.loadViewIfNeeded()
                     controller.MytenpoArray = self.tenpoArray
                 }
-
+                
                 
             } else {
                 //ログインしてなかった場合の処理
@@ -124,13 +125,14 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
                 self.present(alertController, animated: true, completion: nil)
             }
             
-
+            
             
         }
         
         alertController.addAction(addMyTenpoAction)
         
         
+        // 店舗詳細を押した場合に行う処理
         let viewDetailAction = UIAlertAction(title: "店舗詳細", style: .default, handler: {(action) in
             // DetailViewControllerに値を渡し遷移する
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -143,18 +145,19 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
             detailVC.searchString = "https://www.google.co.jp/search?q=\(encodeString!)"
             
             self.present(detailVC, animated: true)
-                
+            
         })
         alertController.addAction(viewDetailAction)
-            
+        
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
-            //ipadで落ちてしまう対策
-            alertController.popoverPresentationController?.sourceView = view
-            
-            present(alertController, animated: true, completion: nil)
+        //ipadで落ちてしまう対策
+        alertController.popoverPresentationController?.sourceView = view
+        
+        present(alertController, animated: true, completion: nil)
         
     }
+    
     
     func doneCatchData(array: [DataSets]) {
         
@@ -162,14 +165,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
         tenpoTableView.reloadData()
         
     }
-
     
-    func Add_PopupView() {
-        
-        
-        
-    }
     
-
 }
 

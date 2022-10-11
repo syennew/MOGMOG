@@ -17,7 +17,7 @@ protocol MyTenpoDataProtocol {
 }
 
 class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,DoneLoadDataProtocol {
-
+    
     var userName = String()
     var MytenpoArray = [DataSets]()
     var userNameArray = [String]()
@@ -57,7 +57,7 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return MytenpoArray.count
         
     }
@@ -73,6 +73,7 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -108,16 +109,16 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
             detailVC.searchString = "https://www.google.co.jp/search?q=\(encodeString!)"
             
             self.present(detailVC, animated: true)
-                
+            
         })
         alertController.addAction(viewDetailAction)
-            
+        
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
-            //ipadで落ちてしまう対策
-            alertController.popoverPresentationController?.sourceView = view
-            
-            present(alertController, animated: true, completion: nil)
+        //ipadで落ちてしまう対策
+        alertController.popoverPresentationController?.sourceView = view
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     
@@ -132,15 +133,15 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tableView_MyTenpo.reloadData()
         
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -79,8 +79,8 @@ class SearchAndLoad {
                     
                     var totalHitcount = json["results"]["results_returned"].string
                     var hitcount = Int(totalHitcount!)
-                        
-                        
+                    
+                    
                     self.resultParPage = hitcount!
                     
                     if self.resultParPage >= 1 {

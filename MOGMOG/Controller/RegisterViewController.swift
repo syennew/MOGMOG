@@ -36,7 +36,7 @@ class RegisterViewController: UIViewController {
         
         // キーボードを閉じる
         NotificationCenter.default.addObserver(self, selector: #selector(hideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
-        // Do any additional setup after loading the view.
+        
     }
     
     
@@ -80,7 +80,7 @@ class RegisterViewController: UIViewController {
     }
     
     
-    
+    // 新規登録機能
     func handleAuthToFirebase() {
         guard let email = mailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -106,9 +106,10 @@ class RegisterViewController: UIViewController {
             print("認証情報の保存に成功しました")
             
         }
-
+        
         
     }// func handleAuthToFirebase()
+    
     
     func addUserInfoToFirestore(email: String) {
         
@@ -117,10 +118,11 @@ class RegisterViewController: UIViewController {
         
         let docData = ["email": email, "name": name, "createdAt": Timestamp()] as [String: Any]
         let userRef = Firestore.firestore().collection("Users").document(uid)
-        
+        // firestoreのコレクション（"Users"）に定数docDataに入ってる値をセットする
         Firestore.firestore().collection("Users").document(uid).setData(docData) { (error) in
             
             userRef.setData(docData) { (error) in
+                // エラー処理
                 if let error = error {
                     print("firestoreへの保存に失敗しました。\(error)")
                     return
@@ -129,14 +131,15 @@ class RegisterViewController: UIViewController {
                 
                 print("firestoreへの保存に成功しました")
                 
+                // コレクション("Users")からデータを取得する
                 userRef.getDocument { (snapshot, error) in
+                    // エラー処理
                     if let error = error {
-                        
                         print("ユーザー情報の取得に失敗しました。\(error)")
                         return
                         
                     }
-                    
+                    //
                     guard let data = snapshot?.data() else { return }
                     let user = UserData.init(dic: data)
                     print("ユーザー情報の取得に成功しました。\(user.name)")
@@ -145,7 +148,7 @@ class RegisterViewController: UIViewController {
                 
                 
             }
-
+            
             
         }
         
@@ -171,16 +174,7 @@ class RegisterViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
 
 extension RegisterViewController: UITextFieldDelegate {

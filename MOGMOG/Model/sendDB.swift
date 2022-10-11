@@ -41,7 +41,7 @@ class sendDB {
          tenpoName: String,
          tenpoCategory: String) {
         
-
+        
         self.userName = userName
         self.tenpoImage = tenpoImage
         self.tenpoName = tenpoName
@@ -83,9 +83,9 @@ class sendDB {
                 
                 let uid = Auth.auth().currentUser?.uid
                 self.db.collection("Users").document(uid!).setData(
-                
+                    
                     ["imageURLString":url?.absoluteString as Any]
-                
+                    
                 )
                 
                 self.donesendprofileDelegate?.doneSendProfile(sendCheck: 1)

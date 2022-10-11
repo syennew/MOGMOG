@@ -12,7 +12,7 @@ import FirebaseFirestore
 import Photos
 
 class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     
     var db = Firestore.firestore()
     var userData: UserData?
@@ -67,8 +67,11 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, U
         super.viewWillAppear(animated)
         
         if Auth.auth().currentUser?.uid != nil {
-        let profileLabelData = db.collection("Users").document(uid!)
+            
+            let profileLabelData = db.collection("Users").document(uid!)
+            
             profileLabelData.getDocument {(doc, error) in
+                
                 if let docment = doc, docment.exists {
                     
                     let dataDescription = docment.get("name")
@@ -78,7 +81,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, U
                     
                     self.profileLabel.text = dataDescription as! String
                 }
-                 
+                
                 self.searchAndLoad.loadProfile()
                 
             }
@@ -90,7 +93,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, U
         }
     }
     
-    
+    // ログイン画面に画面遷移するボタン
     @IBAction func loginAndregisterButton(_ sender: Any) {
         
         if Auth.auth().currentUser?.uid != nil {
@@ -109,7 +112,7 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, U
         }
     }
     
-    
+    // SettingViewControllerに画面遷移するボタン
     @IBAction func settingButton(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -135,13 +138,14 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, U
             }
             
         }
-                        alertController.addAction(defaultAction)
+        alertController.addAction(defaultAction)
         let cancel = UIAlertAction(title: "キャンセル", style: .cancel)
         alertController.addAction(cancel)
-                        self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
         
     }
     
+    // ボタンに影を追加するメソッド
     func AddShadow_Buttons() {
         
         loginAndregisterButton.layer.cornerRadius = 10
@@ -152,12 +156,12 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, U
         loginAndregisterButton.layer.shadowOpacity = 0.5
         settingButton.layer.shadowOpacity = 0.5
         logoutButton.layer.shadowOpacity = 0.5
-
+        
         // 影のぼかしの大きさ
         loginAndregisterButton.layer.shadowRadius = 3
         settingButton.layer.shadowRadius = 3
         logoutButton.layer.shadowRadius = 3
-
+        
         // 影の色
         loginAndregisterButton.layer.shadowColor = UIColor.black.cgColor
         settingButton.layer.shadowColor = UIColor.black.cgColor
@@ -169,20 +173,20 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, U
         logoutButton.layer.shadowOffset = CGSize(width: 5, height: 5)
         
     }
-
+    
     
     
     
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
