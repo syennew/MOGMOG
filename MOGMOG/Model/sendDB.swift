@@ -53,14 +53,13 @@ class sendDB {
         
         let uid = Auth.auth().currentUser?.uid
         
-        self.db.collection("Users").document(uid!).collection("collection").document().setData(
+        self.db.collection("Users").document(uid!).collection("collection").document(self.tenpoName).setData(
             ["tenpoImage": self.tenpoImage as Any,
              "tenpoName": self.tenpoName as Any,
              "tenpoCategory": tenpoCategory as Any,
              "postDate": Date().timeIntervalSince1970])
-        
-        
     }
+    
     
     func sendProfile(imageData:Data) {
         
@@ -95,4 +94,33 @@ class sendDB {
         
     }
     
+    func Reject_AddMyTenpo() {
+        
+        let uid = Auth.auth().currentUser?.uid
+        let tenpoNameData = Firestore.firestore().collection("Users").document(uid!).collection("collection").getDocuments() { (collection, error) in
+            
+            if let error = error {
+                print("データの取得に失敗しました")
+                return
+                
+            } else {
+                
+                for doc in collection!.documents {
+                    
+                    guard let tenpoNamelist: [[String: Any]] = doc.get("tenpoName") as? [[String: Any]] else {
+                        
+                        return
+                    }
+                    
+                }
+            }
+            
+        }// tenpoNameData
+        
+        
+        
+        
+    }
+    
 }
+

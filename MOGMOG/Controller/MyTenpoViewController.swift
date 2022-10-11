@@ -23,7 +23,7 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var userNameArray = [String]()
     var searchAndLoad = SearchAndLoad()
     
-    
+    var tenpoName = String()
     
     @IBOutlet weak var tableView_MyTenpo: UITableView!
     
@@ -71,6 +71,8 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.TenpoImageView.sd_setImage(with: URL(string: MytenpoArray[indexPath.row].ShopPhoto!), completed: nil)
         cell.CategoryLabel.text = MytenpoArray[indexPath.row].ShopCategory
         
+        tenpoName = cell.TenpoNameLabel.text!
+        
         return cell
     }
     
@@ -112,6 +114,32 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
             
         })
         alertController.addAction(viewDetailAction)
+        
+        let deleteAction = UIAlertAction(title: "My店舗から削除", style: .default, handler: {(action) in
+            
+            let uid = Auth.auth().currentUser?.uid
+            Firestore.firestore().collection("Users").document(uid!).collection("collection").document(self.tenpoName).delete() {error in
+                
+                if let error = error {
+                    
+                    print("データの削除に失敗しました")
+                } else {
+                    print("データの削除に成功しました")
+                    
+                    let alert = UIAlertController(title: "通知", message: "削除しました", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default)
+                    
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true)
+                    
+                    self.tableView_MyTenpo.reloadData()
+                    
+                }
+                
+            }
+            
+        })
+        alertController.addAction(deleteAction)
         
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)

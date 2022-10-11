@@ -25,6 +25,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
     var detail_urlString: String?
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -106,8 +107,9 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
                                     tenpoName: self.tenpoArray[indexPath.row].ShopName!,
                                     tenpoCategory: self.tenpoArray[indexPath.row].ShopCategory!)
                 
-                sendDB.sendData(userName: self.userName)
-                
+
+                    sendDB.sendData(userName: self.userName)
+
                 
                 if let controller = self.tabBarController?.viewControllers as? MyTenpoViewController {
                     
@@ -157,6 +159,8 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
         present(alertController, animated: true, completion: nil)
         
     }
+    
+    
     
     
     func doneCatchData(array: [DataSets]) {
