@@ -9,6 +9,7 @@ import UIKit
 import SDWebImage
 import FirebaseAuth
 import FirebaseFirestore
+import ViewAnimator
 
 
 protocol MyTenpoDataProtocol {
@@ -40,20 +41,17 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         searchAndLoad.doneLoadDataProtocol = self
         
-        if Auth.auth().currentUser?.uid != nil {
-            
-            self.searchAndLoad.loadMyTenpoData()
-            
-        }
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         if Auth.auth().currentUser?.uid != nil{
             self.searchAndLoad.loadMyTenpoData()
         }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        let animation = AnimationType.from(direction: .top, offset: 50)
+        UIView.animate(views: tableView_MyTenpo.visibleCells, animations: [animation], delay: 0, duration: 1)
+        
     }
     
     
@@ -72,6 +70,9 @@ class MyTenpoViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.CategoryLabel.text = MytenpoArray[indexPath.row].ShopCategory
         
         tenpoName = cell.TenpoNameLabel.text!
+        
+        let animation = AnimationType.from(direction: .bottom, offset: 50)
+        UIView.animate(views: tableView_MyTenpo.visibleCells, animations: [animation], duration: 0.2)
         
         return cell
     }

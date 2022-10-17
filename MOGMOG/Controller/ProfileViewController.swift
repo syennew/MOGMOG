@@ -60,6 +60,9 @@ class ProfileViewController: UIViewController,UIImagePickerControllerDelegate, U
             profileLabel.text = "no name"
         }
         
+    
+        
+        
         
     }
     

@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import ViewAnimator
 
 
 
@@ -36,14 +37,26 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
         
         tenpoTableView.flashScrollIndicators()
         
-        tenpoTableView.register(UINib(nibName: "TenpoCell", bundle: nil), forCellReuseIdentifier: "tenpocell")
-        
         tenpoSearchBar.placeholder = "店舗名を入力してください"
+        
+        tenpoTableView.register(UINib(nibName: "TenpoCell", bundle: nil), forCellReuseIdentifier: "tenpocell")
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let animation = AnimationType.from(direction: .top, offset: 300)
+        UIView.animate(views: tenpoTableView.visibleCells, animations: [animation], delay: 0, duration: 1)
+        
+        print(tenpoArray.description)
+        
+    }
+    
+    
     // エンターを押したときに呼び出されるメソッド
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         
         if tenpoSearchBar.text == "" {
             view.endEditing(true)
@@ -56,6 +69,7 @@ class ViewController: UIViewController,UISearchBarDelegate,UITableViewDelegate,U
             let searchModel = SearchAndLoad(urlString: urlHotpepper_API)
             searchModel.doneCatchDataProtocol = self
             searchModel.search()
+            
             
             view.endEditing(true)
             
