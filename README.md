@@ -26,7 +26,7 @@
 
 ## Overview
 
-HotPepper APIを使った飲食店検索アプリです。
+HotPepper APIを使った飲食店検索アプリです。  
 検索したお店の情報を見たり、お気に入り登録したりできます。
 
 ## Requirement
